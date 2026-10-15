@@ -20,7 +20,7 @@ A `CLAUDE_CONFIG_DIR` entry that already ends in `projects` is normalised to its
 
 Reading files the CLIs own means history works retroactively on first launch, and it also means the plugin only ever reads. It writes nothing to either CLI's directory.
 
-Muse Code history reads `model_completed` events from its durable session logs (verified with Muse 1.4.1). `recorded_at` is converted from Unix microseconds to milliseconds. Every completed model call contributes its own model and usage; goal-attribution events and tool outputs are excluded. Cache reads (`cache_read_tokens`, falling back to `cached_tokens`) are a subset of input and are subtracted before reporting uncached input. Reasoning stays inside output. Cache writes are retained separately, without guessing a TTL. Missing model IDs appear as `unknown`; costs remain unavailable unless the rate table knows the model. No Muse login or API request is needed to read these logs.
+Muse Code history reads `model_completed` events from its durable session logs (verified with Muse 1.4.9). `recorded_at` is converted from Unix microseconds to milliseconds. Every completed model call contributes its own model and usage; goal-attribution events and tool outputs are excluded. Cache reads (`cache_read_tokens`, falling back to `cached_tokens`) are a subset of input and are subtracted before reporting uncached input. Reasoning stays inside output. Cache writes are retained separately, without guessing a TTL. Missing model IDs appear as `unknown`; costs remain unavailable unless the rate table knows the model. No Muse login or API request is needed to read these logs.
 
 ## Buckets
 

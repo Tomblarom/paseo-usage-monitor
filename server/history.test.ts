@@ -61,7 +61,7 @@ interface Harness {
 const PROVIDER_QUERY = { range: "24h", groupBy: "provider" } as const;
 const MODEL_QUERY = { range: "24h", groupBy: "model" } as const;
 
-/** Synthetic data with the durable envelope emitted by Muse Code 1.4.1. */
+/** Synthetic data with the durable envelope emitted by Muse Code 1.4.9. */
 function museLine(overrides: Record<string, unknown> = {}, source = "completion-1"): string {
   return JSON.stringify({
     schema_version: 1,
