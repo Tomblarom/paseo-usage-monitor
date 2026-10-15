@@ -111,6 +111,8 @@ Cache reads, cache writes and output are priced separately, since a cache read c
 
 **A null cost is not a zero cost.** A series no rate could price stays visible and reads `unpriced`; any total containing one is `null` rather than a partial sum, and a `+` suffix marks a figure that is a floor. A wrong rate is worse than no rate, so model-id resolution never crosses a modality boundary on an inexact match - a text model will go unpriced rather than borrow an image model's price.
 
+Muse model IDs resolve to the corresponding `meta/` entry in the price table. Standard and Contributor variants use their own rates; if a variant has no rate, it stays `unpriced` instead of borrowing another tier's price.
+
 The original objection to a dollar figure still stands and is why it works this way: a price table _bundled_ into this plugin would drift out of date silently and report confident wrong numbers. Fetching the canonical table, caching it, and showing its age is a different thing.
 
 ## Known gaps
